@@ -1071,6 +1071,14 @@ func (z *Tokenizer) Raw() []byte {
 	return z.buf[z.raw.start:z.raw.end]
 }
 
+func (z *Tokenizer) StartPos() int {
+	return z.raw.start
+}
+
+func (z *Tokenizer) EndPos() int {
+	return z.raw.end
+}
+
 // convertNewlines converts "\r" and "\r\n" in s to "\n".
 // The conversion happens in place, but the resulting slice may be shorter.
 func convertNewlines(s []byte) []byte {
